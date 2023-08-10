@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- inner banner -->
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-4 pb-sm-4">
+                <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">Contact Us</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><i class="fas fa-angle-right mx-2"></i>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //inner banner -->
+{{ name }}
+    <!-- contact section -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="container py-md-5 py-4">
+            <h3 class="title-style text-center mb-5"><span>Contact</span> Us</h3>
+            <div class="row text-center mb-5 pb-lg-5 pb-sm-4">
+                <div class="col-lg-3 col-sm-6 contact-info">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Location</h4>
+                    <p>159/3/C/1, 2 street, Shaymoli, Dhaka-1207</p>
+                </div>
+                <div class="col-lg-3 col-sm-6 contact-info mt-md-0 mt-4">
+                    <i class="fas fa-headset"></i>
+                    <h4>Phone</h4>
+                    <p><a href="tel:+880 1955 685500">+880 1955 685500</a></p>
+                </div>
+                <div class="col-lg-3 col-sm-6 contact-info mt-lg-0 mt-4">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h4>Email</h4>
+                    <p><a href="mailto:mail@example.com" class="email">arifmahmudovi997@.com</a></p>
+                </div>
+                <div class="col-lg-3 col-sm-6 contact-info mt-lg-0 mt-4">
+                    <i class="fas fa-user-clock"></i>
+                    <h4>Working Hours</h4>
+                    <p>24 Hours</p>
+                </div>
+            </div>
+            <center>
+                <h2>Thanks {{ name }}!</h2>
+                
+            </center>
+            <br/><br/>
+            <div class="form-inner-cont mx-auto" style="max-width:800px">
+                <form action="{% url 'contact' %}" method="post" class="signin-form">
+                    {% csrf_token %}
+                    <div class="row align-form-map">
+                        <div class="col-sm-6 form-input">
+                            <input type="text" name="name" id="name" placeholder="Name" />
+                        </div>
+                        <div class="col-sm-6 form-input">
+                            <input type="email" name="email" id="email" placeholder="Email" required="" />
+                        </div>
+                        <div class="col-sm-6 form-input">
+                            <input type="text" name="subject" placeholder="Subject" class="contact-input">
+                        </div>
+                        <div class="col-sm-6 form-input">
+                            <input type="number" name="phone" placeholder="Phone Number" class="contact-input">
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <textarea placeholder="Message" name="message" id="message" required=""></textarea>
+                    </div>
+                    <div class="submit text-right">
+                        <button type="submit" class="btn btn-style">Submit
+                            Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- map -->
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14605.879437132764!2d90.33949945568183!3d23.766277203881835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0a1ae8e3a9d%3A0x7e083e120768c091!2s1%20Road%20No.%202%2C%20Dhaka%201207!5e0!3m2!1sen!2sbd!4v1690751352057!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- //contact section -->
+
+   {% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+ <!-- inner banner -->
+ <section class="inner-banner py-5">
+    <div class="w3l-breadcrumb py-lg-5">
+        <div class="container pt-4 pb-sm-4">
+            <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">Contact Us</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><i class="fas fa-angle-right mx-2"></i>Contact</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<br/><br/>
+<!-- //inner banner -->
+<div class="container py-5">
+    <div class="card shadow p-5">
+        <h1 class="text-center">Review Your Information:</h1>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <strong>Your Name:</strong> {{ your_name }}<br>
+                <strong>Your Email:</strong> {{ your_email }}<br>
+                <strong>Day:</strong> {{ your_days }}<br>
+                <strong>Your Phone:</strong> {{ your_phone }}<br>
+                <strong>Your Address:</strong> {{ your_address }}<br>
+                <strong>Your Time:</strong> {{ your_scheldule }}<br>
+               </div>
+                <div class="col-md-6">
+                <strong>Your Message:</strong> {{ message }}<br>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact section -->
+<br/><br/><br/>
+<!-- map -->
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14605.879437132764!2d90.33949945568183!3d23.766277203881835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0a1ae8e3a9d%3A0x7e083e120768c091!2s1%20Road%20No.%202%2C%20Dhaka%201207!5e0!3m2!1sen!2sbd!4v1690751352057!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- //contact section -->
+{% endblock %}
